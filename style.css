@@ -5,19 +5,40 @@
     box-sizing: border-box;
 }
 
-#container {
+.container {
     background-color: #333;
-    border: 1px solid red;
+    border: 3px solid red;
     padding: 20px;
     display: grid;
-    grid-template-columns: 50px auto 10%;
-    height: 35vh;
-    grid-template-rows: 70% 30%;
     gap: 5px;
+    grid-template-areas:
+        'header header header header'
+        'sidbar content content content'
+        'footer footer footer footer '
+
+    ;
 }
 
-#container div {
+.container div {
     background-color: #ccc;
     padding: 20px;
     border: 1px solid blue;
+}
+
+#header {
+    grid-area: header;
+}
+
+#sidbar {
+    grid-area: sidbar;
+    height: 50vh;
+}
+
+#content {
+    grid-area: content;
+    height: 50vh;
+}
+
+#footer {
+    grid-area: footer;
 }
